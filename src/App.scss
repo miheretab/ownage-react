@@ -1,0 +1,46 @@
+$primary: #2fdbd9;
+$secondary: #ffa500;
+
+.App {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover, &:focus, &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active, &.dropdown-toggle {
+        background-color: $secondary;
+        border-color: $secondary;
+    }
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    float: left;
+    min-height: 190px;
+    margin: 10px;
+    background: $primary;
+    border-color: $primary;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover, &:focus, &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active, &.dropdown-toggle {
+        background-color: $secondary;
+        border-color: $secondary;
+    }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+    .card {
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 10px;
+    }
+}
