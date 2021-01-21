@@ -1,47 +1,12 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter
-} from 'reactstrap';
+import React from 'react';
+import PrankList from './PrankList';
+import Routes from './routes';
 
-import logo from './logo.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
-
-const categories = ['view-all-pranks', 'new-prank-calls', 'food-restaurant-prank-calls'];
-
-function App() {
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
+function App(props) {
 
   return (
     <div className="App">
-      {categories.map((category) =>
-      <Card>
-        <CardBody onClick={toggle}>
-          <CardTitle tag="h5">{category}</CardTitle>
-        </CardBody>
-
-        <Modal isOpen={modal} toggle={toggle} >
-          <ModalHeader toggle={toggle}>{category}</ModalHeader>
-          <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-            <Button color="secondary" onClick={toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
-
-      </Card>
-      )}
+      <Routes />
     </div>
   );
 }

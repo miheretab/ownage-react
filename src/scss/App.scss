@@ -1,0 +1,70 @@
+$primary: #2fdbd9;
+$secondary: #ffa500;
+
+.App {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover, &:focus, &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active, &.dropdown-toggle {
+        background-color: $secondary;
+        border-color: $secondary;
+    }
+}
+
+.card {
+    &.category {
+        width: calc(33.33% - 20px);
+        float: left;
+        min-height: 190px;
+        margin: 10px;
+        background: $primary;
+        border-color: $primary;
+        color: #fff;
+        cursor: pointer;
+
+        &:hover, &:focus, &:not(:disabled):not(.disabled).active,
+        &:not(:disabled):not(.disabled):active, &.dropdown-toggle {
+            background-color: $secondary;
+            border-color: $secondary;
+        }
+
+        .card-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 166px;
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.input-group-append {
+  &.search {
+    cursor: pointer;
+  }
+}
+
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+    .card {
+        &.category {
+            width: 100%;
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+    }
+}
